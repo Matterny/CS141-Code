@@ -4,46 +4,88 @@
  #include <cstdlib>
  #include <stdio.h>
 using namespace std;
- bool isName(string name);
+ bool isname(string name);
  string accountNumber();
  void accountBalance(string);
 
 
 int main(){
   ///////////////////////////////////////Declare Variables////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-  string Name[2],accNum;//Declare An array called Name, and a string called accNum
-  int zipCode;//Declare an int called zipCode.
+  string name[2],accNum,accFile = "accounts.txt";//Declare An array called name, and a string called accNum
+  int zipCode;//Declare an integer called zipCode.
   //////////////////////////////////////Variables are declared////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-
   ////////////////////////////////////////////////////Get users names/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-  system("clear");
-  std::cout<<"Please tell me your first name: ";//ask for first name
-  for(cin>>Name[0];!isName(Name[0]);cin>>Name[0])std::cout<<"\nYour first name must be between 2 and 10 charecters\n";
+    system("clear");
+    cout<<"Please tell me your first name: ";//ask for first name
+    for(cin>>name[0];!isname(name[0]);cin>>name[0]);
 
-
-  std::cout<<"Please tell me your last name: ";//Ask for Last name
-  for(cin>>Name[1];!isName(Name[1]);cin>>Name[1])//Validate Length
-    {std::cout<<"\nYour Last name must be between 2 and 10 charecters\n";}
+    cout<<"Please tell me your last name: ";//Ask for Last name
+    for(cin>>name[1];!isname(name[1]);cin>>name[1]);//Validate Length
   //////////////////////////////////////////////////Program has users names///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
 
   /////////////////////////////////////////////////////Get accNum//////////////////////////////////////////
   accNum = accountNumber();
 
-  ///////////////////////////////////////////////////Return sucessful////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-  std::cout<<"Results OK, "<<Name[0]<<" "<<Name[1]<<" "<<accNum<<endl;//Reurn sucessful with users name
+  //////////////////////////////////////////////////See if users are in database//////////////////////////////////////////////////
+  ifstream database;
+  database.open('accounts.txt');
+  bool userFound=0;
+  while(!database.eof())
+  {string fn, ln, Anum;
+    database>>fn;
+    if(fn == name[0])
+    {database>>ln;
+      if(ln == name[1])
+      {
+        database>>accNum;
+        if(Anum=accNum)
+        {
+          userFound=1;
+          break;
+        }
+      }
+    }
+  }
+database.close();
+if(!userFound){
+  cout<<"No record of that user exists, make an account?\n";
+  char ans;
+  while(1){
+  cin>>ans;
+  if (ans=='Y')
+  {
+    //Code for making an account
+    break;
+  }
+  else if(ans=='N')
+  {
+    return 0;
+  }
+  else
+  cout<<"Try Y or N";
+}}
 
-  accountBalance(Name[0]+Name[1]+accNum);
+
+
+  ///////////////////////////////////////////////////Return sucessful////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  cout<<"Results OK, "<<name[0]<<" "<<name[1]<<" "<<accNum<<endl;//Reurn sucessful with users name
+
+  accountBalance(name[0]+name[1]+accNum);
 }
 
 
-bool isName(string name){
+bool isname(string name){
   system("clear");
   bool isValid = true;
-  if ((2<name.length())&&(name.length()<10))//Length is correct.
-    {
-      for(int i;i<sizeof(name);i++)
-      {
+  if(!isupper(name[0])){
+    isValid=false;
+    cout<<"The first letter must be capitalized\n";}
+
+  if ((2<name.length())&&(name.length()<10)){//Length is correct.
+      for(int i=0;i<name.length();i++){
         if(!isalpha(name[i]))
         {
           if((name[i]==45)&&(!isupper(name[i+1])))
@@ -56,7 +98,11 @@ bool isName(string name){
         }
       }
     }
-    else isValid=false;//Name is either too short or too long.
+    else {
+      isValid=false;//name is either too short or too long.
+      cout<<"\nThis name must be between 2 and 10 charecters\n";
+    }
+
     return isValid;
 }
 
@@ -122,7 +168,7 @@ void accountBalance(string user){
     {
       std::cout <<"How much money would you like to withdraw?\n";
       std::cin >> change;                     //Asks the user how much they would like to withdraw
-      if(balance - change <0)
+      if(balance - change < 0)
       {
         std::cout << "Your balance is too low to do that\n";//If the user doesnt have enough money, reject the transaction.
         userInput = 'S';//Show the user their balance
@@ -135,6 +181,6 @@ void accountBalance(string user){
     std::cout <<std::endl<<std::endl;}
     else
     cout<< "I dont know that ability\n";//Return an error if the command isnt recognized.
-}
-logging.close();
+  }
+  logging.close();
 }
