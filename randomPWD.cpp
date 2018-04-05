@@ -52,8 +52,12 @@ void readPWD(string fileName){
 void randomizeArray(){
   for(int x=0;x<50;x++)
   {int randomPos = rand() % 50;
-    newPWD[x] = passwords[randomPos];
-  }
+    while(passwords[randomPos] == "VOID")
+      randomPos = rand() % 50;
+
+      newPWD[x] = passwords[randomPos];
+      passwords[randomPos] = "VOID";
+    }
 }
 
 void writeInfo(string fileName){
