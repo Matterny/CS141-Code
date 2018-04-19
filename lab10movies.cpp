@@ -118,8 +118,6 @@ bool notfound =true;
 	{notfound=false;
 		//Print entry from linked list
 		std::cout << currentPtr->aMovie.movieName << " released in " << currentPtr->aMovie.yearReleased << std::endl;
-		//Move currentPtr to next location
-		currentPtr = currentPtr->prevPtr;
 	}
 		//Move currentPtr to next location
 		currentPtr = currentPtr->prevPtr;
