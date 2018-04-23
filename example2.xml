@@ -1,0 +1,242 @@
+<payroll>
+<employee>
+<name>John NONE Smith</name>
+<manager>Jane Mary Hargreave</name>
+<department>Engineering</department>
+<payrate>15.2</payrate>
+<overtime>Yes</overtime>
+<multiplier>1.3</multiplier>
+<hours>55</hours>
+<overhours>92.5</overhours>
+<lunch>5</lunch>
+<pay>1257.8</pay>
+</employee>
+<employee>
+<name>Jessica Alice Waters</name>
+<manager>Jane Mary Hargreave</name>
+<department>Avionics</department>
+<payrate>19.4</payrate>
+<overtime>No</overtime>
+<multiplier>0</multiplier>
+<hours>45</hours>
+<overhours>82.5</overhours>
+<lunch>5</lunch>
+<pay>873</pay>
+</employee>
+<employee>
+<name>Drew John Deforge</name>
+<manager>Elenora Jane Flake</name>
+<department>Business</department>
+<payrate>19.02</payrate>
+<overtime>Yes</overtime>
+<multiplier>1.2</multiplier>
+<hours>54</hours>
+<overhours>91.5</overhours>
+<lunch>5</lunch>
+<pay>1375.15</pay>
+</employee>
+<employee>
+<name>Jaimie Elena Hensen</name>
+<manager>Russel Mark Finch</name>
+<department>Software</department>
+<payrate>19.96</payrate>
+<overtime>No</overtime>
+<multiplier>0</multiplier>
+<hours>55</hours>
+<overhours>92.5</overhours>
+<lunch>5</lunch>
+<pay>1097.8</pay>
+</employee>
+<employee>
+<name>Cher Alice Ivy</name>
+<manager>Nolan Chris Funes</name>
+<department>Engineering</department>
+<payrate>18.34</payrate>
+<overtime>Yes</overtime>
+<multiplier>1.1</multiplier>
+<hours>58</hours>
+<overhours>95.5</overhours>
+<lunch>7</lunch>
+<pay>1238.87</pay>
+</employee>
+<employee>
+<name>Susanne Emily Cranford</name>
+<manager>Jane Mary Hargreave</name>
+<department>Avionics</department>
+<payrate>15.83</payrate>
+<overtime>No</overtime>
+<multiplier>1.3</multiplier>
+<hours>54</hours>
+<overhours>91.5</overhours>
+<lunch>6</lunch>
+<pay>854.82</pay>
+</employee>
+<employee>
+<name>Darrel Mark Puma</name>
+<manager>Jane Mary Hargreave</name>
+<department>Business</department>
+<payrate>15.73</payrate>
+<overtime>Yes</overtime>
+<multiplier>0</multiplier>
+<hours>53</hours>
+<overhours>90.5</overhours>
+<lunch>5</lunch>
+<pay>-589.875</pay>
+</employee>
+<employee>
+<name>Nelle Kate Hanlin</name>
+<manager>Elenora Jane Flake</name>
+<department>Software</department>
+<payrate>17.35</payrate>
+<overtime>No</overtime>
+<multiplier>1.2</multiplier>
+<hours>54</hours>
+<overhours>91.5</overhours>
+<lunch>5</lunch>
+<pay>936.9</pay>
+</employee>
+<employee>
+<name>Gussie Mike Tardiff</name>
+<manager>Russel Mark Finch</name>
+<department>Engineering</department>
+<payrate>18.34</payrate>
+<overtime>Yes</overtime>
+<multiplier>0</multiplier>
+<hours>58</hours>
+<overhours>95.5</overhours>
+<lunch>6</lunch>
+<pay>-687.75</pay>
+</employee>
+<employee>
+<name>Hiram Karl Daughtry</name>
+<manager>Nolan Chris Funes</name>
+<department>Avionics</department>
+<payrate>18.09</payrate>
+<overtime>No</overtime>
+<multiplier>1.1</multiplier>
+<hours>54</hours>
+<overhours>91.5</overhours>
+<lunch>5</lunch>
+<pay>976.86</pay>
+</employee>
+<employee>
+<name>Frank David Winter</name>
+<manager>Jane Mary Hargreave</name>
+<department>Business</department>
+<payrate>18.13</payrate>
+<overtime>Yes</overtime>
+<multiplier>1.3</multiplier>
+<hours>57</hours>
+<overhours>94.5</overhours>
+<lunch>7</lunch>
+<pay>1547.4</pay>
+</employee>
+<employee>
+<name>Larisa Melissa Rostad</name>
+<manager>Jane Mary Hargreave</name>
+<department>Software</department>
+<payrate>17.47</payrate>
+<overtime>No</overtime>
+<multiplier>0</multiplier>
+<hours>59</hours>
+<overhours>96.5</overhours>
+<lunch>7</lunch>
+<pay>1030.73</pay>
+</employee>
+<employee>
+<name>Michael Jason Bonetti</name>
+<manager>Elenora Jane Flake</name>
+<department>Engineering</department>
+<payrate>17.65</payrate>
+<overtime>Yes</overtime>
+<multiplier>1.2</multiplier>
+<hours>54</hours>
+<overhours>91.5</overhours>
+<lunch>5</lunch>
+<pay>1276.1</pay>
+</employee>
+<employee>
+<name>Travis Keven Roache</name>
+<manager>Russel Mark Finch</name>
+<department>Avionics</department>
+<payrate>19.72</payrate>
+<overtime>No</overtime>
+<multiplier>0</multiplier>
+<hours>58</hours>
+<overhours>95.5</overhours>
+<lunch>6</lunch>
+<pay>1143.76</pay>
+</employee>
+<employee>
+<name>Leanora Jane Fazekas</name>
+<manager>Nolan Chris Funes</name>
+<department>Business</department>
+<payrate>16.74</payrate>
+<overtime>Yes</overtime>
+<multiplier>1.1</multiplier>
+<hours>57</hours>
+<overhours>94.5</overhours>
+<lunch>7</lunch>
+<pay>1112.37</pay>
+</employee>
+<employee>
+<name>Thelma Lou Mcgraw</name>
+<manager>Jane Mary Hargreave</name>
+<department>Software</department>
+<payrate>16.48</payrate>
+<overtime>No</overtime>
+<multiplier>1.3</multiplier>
+<hours>56</hours>
+<overhours>93.5</overhours>
+<lunch>5</lunch>
+<pay>922.88</pay>
+</employee>
+<employee>
+<name>Elaine Brynn Fruchter</name>
+<manager>Jane Mary Hargreave</name>
+<department>Engineering</department>
+<payrate>16.82</payrate>
+<overtime>Yes</overtime>
+<multiplier>0</multiplier>
+<hours>54</hours>
+<overhours>91.5</overhours>
+<lunch>5</lunch>
+<pay>-630.75</pay>
+</employee>
+<employee>
+<name>Soo Yuan Armond</name>
+<manager>Elenora Jane Flake</name>
+<department>Avionics</department>
+<payrate>18.18</payrate>
+<overtime>No</overtime>
+<multiplier>1.2</multiplier>
+<hours>53</hours>
+<overhours>90.5</overhours>
+<lunch>5</lunch>
+<pay>963.54</pay>
+</employee>
+<employee>
+<name>Rebbeca Chloe Campana</name>
+<manager>Russel Mark Finch</name>
+<department>Business</department>
+<payrate>18.32</payrate>
+<overtime>Yes</overtime>
+<multiplier>0</multiplier>
+<hours>55</hours>
+<overhours>92.5</overhours>
+<lunch>6</lunch>
+<pay>-687</pay>
+</employee>
+<employee>
+<name>Derek Evan Speaker</name>
+<manager>Nolan NONE Funes</name>
+<department>Software</department>
+<payrate>17.83</payrate>
+<overtime>No</overtime>
+<multiplier>1.1</multiplier>
+<hours>55</hours>
+<overhours>92.5</overhours>
+<lunch>5</lunch>
+<pay>980.65</pay>
+</employee>
+</payroll>

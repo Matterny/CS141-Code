@@ -64,8 +64,10 @@ float breakLength(string clockIN,string lunchStart, string lunchEnd, string cloc
   return -timeToInt(lunchStart)+timeToInt(lunchEnd);
 }
 float overtime(string clockIN,string lunchStart, string lunchEnd, string clockout){
-  if(-timeToInt(clockIN)+timeToInt(clockout)-timeToInt(lunchStart)+timeToInt(lunchEnd)>37.5/5)
-  return 37.5/5-timeToInt(clockIN)+timeToInt(clockout)-timeToInt(lunchStart)+timeToInt(lunchEnd);
+  float hoursPerDay = -timeToInt(clockIN)+timeToInt(clockout)-timeToInt(lunchStart)+timeToInt(lunchEnd);
+  if(hoursPerDay>=7.5)
+  {return hoursPerDay-7.5;}
+  else
   return 0;
 }
 float totalPay(float totalHrs,float otHours,float wage, float otPay, char otEle){
@@ -87,7 +89,7 @@ void readData(string fileName){
   while(x<20){
     string starttime,lunchstart, lunchend;
     Employees[x].weekly.totalPay =0;
-    Employees[x].weekly.otHours =0;
+    Employees[x].weekly.otHours  =0;
     Employees[x].weekly.lunchBreakLength =0;
     Employees[x].weekly.hrsWorked =0;
     for(int count=0;count<5;count++){
