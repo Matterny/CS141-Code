@@ -2,16 +2,17 @@
   #include <string>
   #include <iostream>
   #include <fstream>
+  #include <cmath>
   using namespace std;
     float timeToInt(std::string);
     void readData(string);
     float hoursWorked(string ,string , string , string );
     float breakLength(string clockIN,string lunchStart, string lunchEnd, string clockout);
-    float overtime(string clockIN,string lunchStart, string lunchEnd, string clockout);
-    float totalPay(float totalHrs,float otHours,float wage, float otPay, char otEle);
+    float overtime(string,string lunchStart, string lunchEnd, string clockout);
+    float totalPay(float,float,float, float, char);
     void writeData(string);
     enum days {monday, tuesday, wednesday, thursday, friday};
-    #define readf     inFile>>Employees[x].wage.hourly>>Employees[x].wage.otEle>>Employees[x].wage.otRate>>Employees[x].name.Fn>>Employees[x].name.Mn>>Employees[x].name.Ln>>Employees[x].department>>Employees[x].manager.Fn>>Employees[x].manager.Mn>>Employees[x].manager.Ln>>starttime >> lunchstart >> lunchend >> endtime;
+    //#define readf     inFile>>Employees[x].wage.hourly>>Employees[x].wage.otEle>>Employees[x].wage.otRate>>Employees[x].name.Fn>>Employees[x].name.Mn>>Employees[x].name.Ln>>Employees[x].department>>Employees[x].manager.Fn>>Employees[x].manager.Mn>>Employees[x].manager.Ln>>starttime >> lunchstart >> lunchend >> endtime;
 
 struct Wage{
   float hourly, otRate;
@@ -65,10 +66,8 @@ float breakLength(string clockIN,string lunchStart, string lunchEnd, string cloc
 }
 float overtime(string clockIN,string lunchStart, string lunchEnd, string clockout){
   float hoursPerDay = -timeToInt(clockIN)+timeToInt(clockout)-timeToInt(lunchStart)+timeToInt(lunchEnd);
-  if(hoursPerDay>=7.5)
-  {return hoursPerDay-7.5;}
-  else
-  return 0;
+  return abs(hoursPerDay-7.5);
+
 }
 float totalPay(float totalHrs,float otHours,float wage, float otPay, char otEle){
   if(otEle == 'Y')
@@ -135,7 +134,7 @@ void writeData(string fileName){
     else outfile<<"error";
     }
  outfile<<"</overtime>\n<multiplier>"<< Employees[x].wage.otRate << "</multiplier>\n<hours>"<<Employees[x].weekly.hrsWorked <<"</hours>\n<overhours>";
- outfile<<Employees[x].weekly.otHours <<"</overhours>\n<lunch>"<<Employees[x].weekly.lunchBreakLength<<"</lunch>\n<pay>"<< Employees[x].weekly.totalPay <<"</pay>\n</employee>\n";
+ outfile<<Employees[x].weekly.hrsWorked-37.5 <<"</overhours>\n<lunch>"<<Employees[x].weekly.lunchBreakLength<<"</lunch>\n<pay>"<< Employees[x].weekly.totalPay <<"</pay>\n</employee>\n";
 x++;
 }
 //  */
