@@ -87,9 +87,13 @@ void readData(string fileName){
   string endtime;
   while(x<20){
     string starttime,lunchstart, lunchend;
-
+    Employees[x].weekly.totalPay =0;
+    Employees[x].weekly.otHours  =0;
+    Employees[x].weekly.lunchBreakLength =0;
+    Employees[x].weekly.hrsWorked =0;
     for(int count=0;count<5;count++){
       inFile>>Employees[x].wage.hourly>>Employees[x].wage.otEle>>Employees[x].wage.otRate>>Employees[x].name.Fn>>Employees[x].name.Mn>>Employees[x].name.Ln>>Employees[x].department>>Employees[x].manager.Fn>>Employees[x].manager.Mn>>Employees[x].manager.Ln>>starttime >> lunchstart >> lunchend >> endtime;
+      //Gets the value per day
       Employees[x].timecard[count].hrsWorked = hoursWorked(starttime,lunchstart,lunchend,endtime);
       Employees[x].timecard[count].lunchBreakLength = breakLength(starttime,lunchstart,lunchend,endtime);
       Employees[x].timecard[count].otHours = overtime(starttime,lunchstart,lunchend,endtime);
