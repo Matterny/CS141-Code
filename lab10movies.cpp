@@ -2,6 +2,7 @@
 #include<string>
 #include<fstream>
 using namespace std;
+
 struct Movie{
 	string movieName;
 	int yearReleased;
@@ -13,10 +14,8 @@ struct node
 	Movie aMovie;
 	node* prevPtr;
 };
-//Function: menu is used to display an interactive menu to the user
 void menu();
 void showBeforeYear(node*, int);
-//Function: listMovies is used to display all movies in the linked list
 void listMovies(node*);
 
 int main()

@@ -1,13 +1,16 @@
 #include<iostream>
  #include<fstream>
+ #include<cstdlib>
  #include<string>
  #include<cmath>
- #include<cstdlib>
  using namespace std;
 //Global functions
 void drawMan(int);
 void selectOption();
 
+//Global Macros. Not 100% needed, but I'm not willing to go without for this. 
+#define FileSize 50
+#define cinToUpper    cin>>option;for(int i=0;i<option.length();i++)option[i]=toupper(option[i])
 //global Variables
 struct word{
   string catagory;
@@ -19,8 +22,7 @@ struct word{
 word GuessingOption;
 
 int main(){
-  cout<<"Please tell me a catagory\n";//Replace with a menu of options
-  cin>>GuessingOption.catagory;
+  selectOption();
   drawMan(4);
 }
 
@@ -101,16 +103,43 @@ void drawMan(int stage){
 }
 
 void selectOption(){
-  int x = rand() % 50;
+  while(1){
+    system("clear");
+    cout<<"Please Select a catagory from the list below\n";
+    cout<<"Sports\nStates\nProgramming\nClarkson\nMath\n";//List the 5 options for the user
+    string option;
+    cinToUpper;
+    if(option == "SPORTS"){
+      GuessingOption.catagory = "sports.txt";
+      break;
+    }
+    else if(option == "STATES"){
+      GuessingOption.catagory = "states.txt";
+      break;
+    }
+    else if(option == "PROGRAMMING"){
+      GuessingOption.catagory = "programming.txt";
+      break;
+    }
+    else if(option == "CLARKSON"){
+      GuessingOption.catagory = "clarkson.txt";
+      break;
+    }
+    else if(option == "MATH"){
+      GuessingOption.catagory = "math.txt";
+      break;
+    }
+  }
+  int x = rand() % FileSize;
   ifstream inputFile;
   inputFile.open(GuessingOption.catagory.c_str());
-  string garbage;
   int i;
-  while (i<x) {
-    inputFile.getline(garbage);
+  string garbage;
+  while (i<=x) {
+    getline(inputFile,garbage);
     i++;
   }
-  inputFile >>GuessingOption.word;
+  inputFile >>GuessingOption.word>>GuessingOption.hint1>>GuessingOption.hint2;
 
   inputFile.close();
 }
