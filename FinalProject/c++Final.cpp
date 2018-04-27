@@ -7,9 +7,10 @@
 //Global functions
 void drawMan(int);
 void selectOption();
-
-//Global Macros. Not 100% needed, but I'm not willing to go without for this. 
-#define FileSize 50
+bool guessInWord(char);
+void guessingGame();
+//Global Macros. Not 100% needed, but I'm not willing to go without for this.
+#define FileSize 7    //Can be made larger, IF the files are all increased in size by 1 line.
 #define cinToUpper    cin>>option;for(int i=0;i<option.length();i++)option[i]=toupper(option[i])
 //global Variables
 struct word{
@@ -22,12 +23,19 @@ struct word{
 word GuessingOption;
 
 int main(){
+  while(1){
   selectOption();
-  drawMan(4);
-}
+  guessingGame();
 
-void drawMan(int stage){
-  //Draw the man hanging, with 6 being perfect and 0 being dead.
+  cout<<"Play again?\n";
+  char answer;
+  cin>>answer;
+  if(toupper(answer)!='Y'){
+    break;
+  }
+}}
+
+void drawMan(int stage){//Draw the man hanging, with 6 being perfect and 0 being dead.
   switch (stage) {
     case 0:
         cout
@@ -142,4 +150,30 @@ void selectOption(){
   inputFile >>GuessingOption.word>>GuessingOption.hint1>>GuessingOption.hint2;
 
   inputFile.close();
+}
+
+bool guessInWord(char guess){
+  if(GuessingOption.word.find(guess) != std::string::npos)return 1;
+  return 0;
+}
+void guessingGame(){
+  int badTries = 6;
+  string prevTries = "";
+  while (badTries>0){
+    system("clear");
+    cout<<"Past tries: "<<prevTries<<endl;
+    cout<<"The catagory is inside the file: " << GuessingOption.catagory<<endl;
+    if(badTries<3)cout<<"First hint: "<<GuessingOption.hint1<<endl;
+    if(badTries<2)cout<<"Last hint: "<<GuessingOption.hint2<<endl;
+    cout<<"Please guess a letter: \n";
+    drawMan(badTries);
+    char guess;
+    cin>>guess;
+    if(guessInWord(guess)){
+      prevTries = prevTries+guess;
+    }
+    else{
+      badTries--;
+    }
+  }
 }

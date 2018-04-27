@@ -1,0 +1,7 @@
+basketball  court basket
+baseball    diamond ball
+hockey      stick   puck
+fencing     armor  sword
+boxing      gloves punching
+Vollyball   Net   beach
+Tag         Running Playground
