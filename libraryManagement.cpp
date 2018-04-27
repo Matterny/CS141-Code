@@ -40,10 +40,10 @@ int hasAny = 0;
 void calcPenalty(){
   for(int x=0;x<20;x++){
     int penalty = libraryData[x].late;
-    if ((libraryData[x].late!=-1))
-    float payment = .1*penalty+(penalty>6)*(.1*penalty)+(penalty>10)*penalty*.05;
-    cout<<libraryData[x].Fn<<" "<<libraryData[x].Ln<<" "<<libraryData[x].title<<" $"<<payment<<endl;
-  }
+    if ((libraryData[x].late!=-1)){
+    float payment = .1*penalty+(penalty>5)*(.1*(penalty-5))+(penalty>9)*(penalty-9)*.05;
+    cout<<libraryData[x].Fn<<" "<<libraryData[x].Ln<<" "<<libraryData[x].title<<" $"<< payment <<endl;
+  }}
 }
 
 void ShowMenu(){
